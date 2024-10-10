@@ -57,8 +57,7 @@ jobs:
       
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
-        # Only login to the Docker Hub if the repo is bpawnzz/anything-llm
-, to allow for forks to build on GHCR
+        # Only login to the Docker Hub if the repo is bpawnzz/anything-llm, to allow for forks to build on GHCR
         if: steps.dockerhub.outputs.enabled == 'true' 
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
